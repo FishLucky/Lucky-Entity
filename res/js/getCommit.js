@@ -1,7 +1,5 @@
-const fetch = require('node-fetch');
-
 async function getLatestCommit(repo, branch) {
-  const url = `https://api.github.com/repos/FishLucky/Lucky-Entity/commits?sha=dev&per_page=1`;
+  const url = `https://api.github.com/repos/${repo}/commits?sha=${branch}&per_page=1`;
   try {
     const response = await fetch(url);
     const data = await response.json();
